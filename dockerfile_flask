@@ -1,0 +1,17 @@
+FROM ubuntu:16.04
+
+MAINTAINER Naruto Uzumaki
+
+RUN apt-get update && apt-get install -y python3-pip
+RUN apt-get -y install python3
+RUN apt-get install -y python3-flask
+
+COPY first_flask.py /opt/
+
+
+CMD ["echo","Running flask server"]
+
+WORKDIR /opt/
+
+CMD ["python3","first_flask.py"]
+
